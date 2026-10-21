@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agendamento online para barbearia moderna. Conheça nossos barbeiros, serviços, promoções exclusivas e planos mensais.">
+  <title>Barbearia Dom Navalha | Agendamento Online & Planos</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Font Awesome (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar com aviso de expediente / contato rápido -->
+  <aside class="top-announcement" aria-label="Aviso de funcionamento">
+    <div class="container top-announcement-content">
+      <span><i class="fa-regular fa-clock"></i> Terça a Sábado: 09h às 20h | Domingo: 09h às 14h</span>
+      <span><i class="fa-brands fa-whatsapp"></i> WhatsApp: (11) 98765-4321</span>
+    </div>
+  </aside>
+
+  <!-- Cabeçalho e Navegação Principal -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#inicio" class="brand-logo" aria-label="Página inicial Barbearia Dom Navalha">
+        <span class="logo-icon"><i class="fa-solid fa-scissors"></i></span>
+        <div class="logo-text">
+          <span class="logo-title">DOM NAVALHA</span>
+          <span class="logo-subtitle">BARBERSHOP & CLUB</span>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação Desktop -->
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#promocoes" class="nav-link">Promoções</a></li>
+          <li><a href="#planos" class="nav-link">Planos VIP</a></li>
+          <li><a href="#barbeiros" class="nav-link">Barbeiros</a></li>
+          <li><a href="#agendar" class="nav-link">Agendar</a></li>
+          <li><a href="#meus-agendamentos" class="nav-link">Meus Horários</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações do Cabeçalho -->
+      <div class="header-actions">
+        <a href="#agendar" class="btn btn-primary btn-sm btn-glow">
+          <i class="fa-regular fa-calendar-check"></i> Agendar Agora
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main id="main-content">
+
+    <!-- Seção 1: Início / Hero -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-crown text-gold"></i> Experiência Premium em Barbearia
+          </div>
+          <h1 class="hero-title">
+            O corte clássico com a precisão que seu visual merece.
+          </h1>
+          <p class="hero-description">
+            Cortes artesanais, barba na toalha quente, cerveja artesanal e um ambiente feito para você relaxar. Escolha seu profissional e agende seu horário em menos de 1 minuto.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#agendar" class="btn btn-primary btn-lg btn-glow">
+              <i class="fa-solid fa-calendar-days"></i> Escolher Horário
+            </a>
+            <a href="#planos" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-gem"></i> Conhecer Planos VIP
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">+8.500</span>
+              <span class="stat-label">Cortes Realizados</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">4.9 ★</span>
+              <span class="stat-label">Avaliação dos Clientes</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Pontualidade Garantida</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card-preview">
+          <div class="glass-card hero-glass">
+            <div class="card-status-badge">
+              <span class="dot-online"></span> Aberto para Agendamento
+            </div>
+            <div class="preview-header">
+              <div class="preview-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div>
+                <h3>Horário em Destaque</h3>
+                <p>Reserve sem filas de espera</p>
+              </div>
+            </div>
+            <div class="preview-quick-benefits">
+              <div class="benefit-row">
+                <i class="fa-solid fa-check text-gold"></i>
+                <span>Confirmação imediata com Pix ou presencial</span>
+              </div>
+              <div class="benefit-row">
+                <i class="fa-solid fa-check text-gold"></i>
+                <span>Cancelamento simples com 1 clique</span>
+              </div>
+              <div class="benefit-row">
+                <i class="fa-solid fa-check text-gold"></i>
+                <span>Bebida cortesia na sua chegada</span>
+              </div>
+            </div>
+            <a href="#agendar" class="btn btn-outline btn-block">
+              Ver Barbeiros Disponíveis <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 2: Promoções Vigentes -->
+    <section class="section promotions-section" id="promocoes">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-fire text-gold"></i> Economize Mais</div>
+          <h2 class="section-title">Promoções Especiais da Semana</h2>
+          <p class="section-subtitle">
+            Aproveite nossos combos promocionais e cupons com validade limitada para renovar seu estilo.
+          </p>
+        </div>
+
+        <!-- O container abaixo é populado dinamicamente via script.js -->
+        <div class="promotions-grid" id="promotionsContainer">
+          <!-- Gerado via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 3: Planos de Assinatura & Pacotes -->
+    <section class="section plans-section" id="planos">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-gem text-gold"></i> Clube de Assinaturas</div>
+          <h2 class="section-title">Mantenha o Visual em Dia Todo Mês</h2>
+          <p class="section-subtitle">
+            Pacotes exclusivos para quem não abre mão de andar sempre alinhado, com desconto real e agendamento preferencial.
+          </p>
+        </div>
+
+        <!-- O container abaixo é populado dinamicamente via script.js -->
+        <div class="plans-grid" id="plansContainer">
+          <!-- Gerado via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 4: Barbeiros da Equipe -->
+    <section class="section barbers-section" id="barbeiros">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <div class="section-tag"><i class="fa-solid fa-scissors text-gold"></i> Mestres da Navalha</div>
+            <h2 class="section-title">Nossa Equipe de Barbeiros</h2>
+            <p class="section-subtitle">
+              Profissionais experientes prontos para entregar a melhor versão do seu corte.
+            </p>
+          </div>
+          <button class="btn btn-secondary" id="btnOpenNewBarberModal">
+            <i class="fa-solid fa-user-plus"></i> Adicionar Barbeiro
+          </button>
+        </div>
+
+        <!-- O container abaixo é populado dinamicamente via script.js com dados do localStorage -->
+        <div class="barbers-grid" id="barbersContainer">
+          <!-- Gerado via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 5: Agendamento de Horário -->
+    <section class="section booking-section" id="agendar">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-calendar-check text-gold"></i> Agendamento Rápido</div>
+          <h2 class="section-title">Reserve Seu Horário</h2>
+          <p class="section-subtitle">
+            Escolha o serviço, seu profissional de preferência, data e horário conveniente. Sem conflito de agenda!
+          </p>
+        </div>
+
+        <div class="booking-layout">
+          <!-- Formulário de Agendamento -->
+          <div class="booking-form-card glass-card">
+            <form id="bookingForm" novalidate>
+              
+              <!-- 1. Escolha do Serviço -->
+              <div class="form-group">
+                <label for="bookingService" class="form-label">
+                  <i class="fa-solid fa-list-check text-gold"></i> 1. Selecione o Serviço *
+                </label>
+                <select id="bookingService" class="form-control" required>
+                  <option value="" disabled selected>Selecione um serviço...</option>
+                  <!-- Opções inseridas dinamicamente via JavaScript -->
+                </select>
+                <small class="form-hint" id="serviceDetailsHint">Escolha o serviço para carregar o valor e a duração estimada.</small>
+              </div>
+
+              <!-- 2. Escolha do Barbeiro -->
+              <div class="form-group">
+                <label for="bookingBarber" class="form-label">
+                  <i class="fa-solid fa-user-tie text-gold"></i> 2. Selecione o Barbeiro *
+                </label>
+                <select id="bookingBarber" class="form-control" required>
+                  <option value="" disabled selected>Selecione o profissional...</option>
+                  <!-- Opções inseridas dinamicamente via JavaScript -->
+                </select>
+              </div>
+
+              <!-- 3. Escolha da Data -->
+              <div class="form-group">
+                <label for="bookingDate" class="form-label">
+                  <i class="fa-regular fa-calendar text-gold"></i> 3. Escolha a Data *
+                </label>
+                <input type="date" id="bookingDate" class="form-control" required>
+                <small class="form-hint">Disponível de terça a domingo. Dias de folga: Segunda-feira.</small>
+              </div>
+
+              <!-- 4. Horários Disponíveis -->
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-regular fa-clock text-gold"></i> 4. Horários Disponíveis *
+                </label>
+                <div class="time-slots-container" id="timeSlotsContainer">
+                  <p class="slots-placeholder">Selecione o barbeiro e a data para visualizar os horários livres.</p>
+                </div>
+                <input type="hidden" id="selectedTime" name="selectedTime" required>
+              </div>
+
+              <!-- 5. Dados do Cliente -->
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="clientName" class="form-label">
+                    <i class="fa-regular fa-user text-gold"></i> Seu Nome Completo *
+                  </label>
+                  <input type="text" id="clientName" class="form-control" placeholder="Ex: Lucas Silva" required minlength="3">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="clientPhone" class="form-label">
+                    <i class="fa-brands fa-whatsapp text-gold"></i> WhatsApp / Celular *
+                  </label>
+                  <input type="tel" id="clientPhone" class="form-control" placeholder="(11) 99999-9999" required>
+                </div>
+              </div>
+
+              <!-- Opção de Pagamento Instantâneo via Pix -->
+              <div class="payment-method-box">
+                <div class="payment-option active" id="payWithPixOption">
+                  <div class="payment-option-header">
+                    <div class="option-radio">
+                      <input type="radio" id="payPix" name="paymentMethod" value="PIX" checked>
+                      <label for="payPix">
+                        <i class="fa-brands fa-pix text-gold"></i> Pagar via Pix (Ganhe Agilidade na Chegada)
+                      </label>
+                    </div>
+                    <span class="badge badge-success">Recomendado</span>
+                  </div>
+                  <p class="payment-option-desc">
+                    Você pode transferir via Pix antecipadamente ou na hora. Mostraremos a chave Pix para copiar assim que confirmar o agendamento.
+                  </p>
+                </div>
+                <div class="payment-option" id="payInShopOption">
+                  <div class="option-radio">
+                    <input type="radio" id="payInShop" name="paymentMethod" value="BALCAO">
+                    <label for="payInShop">
+                      <i class="fa-solid fa-cash-register"></i> Pagar na Barbearia (Dinheiro ou Cartão)
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg btn-glow" id="btnSubmitBooking">
+                <i class="fa-solid fa-calendar-check"></i> Confirmar Agendamento
+              </button>
+            </form>
+          </div>
+
+          <!-- Resumo Lateral do Agendamento -->
+          <div class="booking-summary-sidebar">
+            <div class="glass-card summary-card">
+              <h3 class="summary-title"><i class="fa-solid fa-receipt text-gold"></i> Resumo do Pedido</h3>
+              <div class="summary-list">
+                <div class="summary-item">
+                  <span class="label">Serviço:</span>
+                  <span class="value" id="summaryService">Nenhum selecionado</span>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Duração estimada:</span>
+                  <span class="value" id="summaryDuration">--</span>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Barbeiro:</span>
+                  <span class="value" id="summaryBarber">A escolher</span>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Data:</span>
+                  <span class="value" id="summaryDate">--/--/----</span>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Horário:</span>
+                  <span class="value" id="summaryTime">--:--</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-total">
+                  <span>Total a Pagar:</span>
+                  <span class="total-price" id="summaryPrice">R$ 0,00</span>
+                </div>
+              </div>
+
+              <!-- Dica de política de cancelamento -->
+              <div class="cancellation-tip">
+                <i class="fa-solid fa-shield-halved text-gold"></i>
+                <p>Precisa reagendar? Cancele ou mude seu horário com até 1h de antecedência sem custo adicional na aba "Meus Horários".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 6: Meus Agendamentos (Listagem e Cancelamento) -->
+    <section class="section appointments-section" id="meus-agendamentos">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <div class="section-tag"><i class="fa-solid fa-calendar-days text-gold"></i> Histórico & Ativos</div>
+            <h2 class="section-title">Meus Agendamentos</h2>
+            <p class="section-subtitle">
+              Confira seus horários marcados, visualize o status e cancele com facilidade se precisar.
+            </p>
+          </div>
+          <button class="btn btn-outline btn-sm" id="btnRefreshAppointments">
+            <i class="fa-solid fa-rotate-right"></i> Atualizar Lista
+          </button>
+        </div>
+
+        <div class="appointments-list-container" id="appointmentsContainer">
+          <!-- Renderizado via JavaScript a partir do localStorage -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé do Site -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo footer-logo">
+          <span class="logo-icon"><i class="fa-solid fa-scissors"></i></span>
+          <div class="logo-text">
+            <span class="logo-title">DOM NAVALHA</span>
+            <span class="logo-subtitle">BARBERSHOP & CLUB</span>
+          </div>
+        </div>
+        <p class="footer-bio">
+          Tradição em navalha, modernidade em estilo e atendimento de excelência para homens que valorizam sua imagem pessoal.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram da barbearia"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook da barbearia"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" aria-label="WhatsApp da barbearia"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navegação Rápida</h4>
+        <ul class="footer-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#promocoes">Promoções da Semana</a></li>
+          <li><a href="#planos">Planos & Assinaturas</a></li>
+          <li><a href="#barbeiros">Nossos Barbeiros</a></li>
+          <li><a href="#agendar">Agendar Horário</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Horário de Atendimento</h4>
+        <ul class="footer-hours">
+          <li><span>Terça a Sexta:</span> <strong>09:00 - 20:00</strong></li>
+          <li><span>Sábado:</span> <strong>09:00 - 20:00</strong></li>
+          <li><span>Domingo:</span> <strong>09:00 - 14:00</strong></li>
+          <li><span>Segunda-feira:</span> <strong class="text-danger">Fechado</strong></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Onde Estamos</h4>
+        <p class="footer-contact"><i class="fa-solid fa-location-dot text-gold"></i> Av. Paulista, 1578 - Bela Vista, São Paulo - SP</p>
+        <p class="footer-contact"><i class="fa-solid fa-phone text-gold"></i> (11) 3245-8890</p>
+        <p class="footer-contact"><i class="fa-solid fa-envelope text-gold"></i> contato@domnavalha.com.br</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 Dom Navalha Barbershop. Todos os direitos reservados.</p>
+        <p>Desenvolvido com JavaScript Puro (HTML, CSS e JS).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODAL: CADASTRAR NOVO BARBEIRO                 -->
+  <!-- ============================================== -->
+  <div class="modal-overlay" id="barberModal" role="dialog" aria-modal="true" aria-labelledby="barberModalTitle" hidden>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="barberModalTitle">
+          <i class="fa-solid fa-user-plus text-gold"></i> Cadastrar Novo Barbeiro
+        </h3>
+        <button class="modal-close" id="btnCloseBarberModal" aria-label="Fechar modal">&times;</button>
+      </div>
+      <form id="newBarberForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="barberName" class="form-label">Nome do Barbeiro *</label>
+            <input type="text" id="barberName" class="form-control" placeholder="Ex: Felipe Ramos" required minlength="3">
+          </div>
+          <div class="form-group">
+            <label for="barberSpecialty" class="form-label">Especialidade Principal *</label>
+            <input type="text" id="barberSpecialty" class="form-control" placeholder="Ex: Fade, Barboterapia, Corte Clássico" required>
+          </div>
+          <div class="form-group">
+            <label for="barberBio" class="form-label">Breve Descrição / Experiência</label>
+            <textarea id="barberBio" class="form-control" rows="3" placeholder="Ex: Especialista em degradê e visagismo com 7 anos de experiência."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="barberAvatar" class="form-label">URL da Foto (Opcional - se vazio, usará iniciais)</label>
+            <input type="url" id="barberAvatar" class="form-control" placeholder="https://exemplo.com/foto.jpg">
+            <small class="form-hint">Deixe em branco para que o sistema gere um avatar com as iniciais do profissional automaticamente.</small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnCancelBarberModal">Cancelar</button>
+          <button type="submit" class="btn btn-primary btn-glow">Salvar Barbeiro</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL / ÁREA DE PAGAMENTO VIA PIX              -->
+  <!-- ============================================== -->
+  <div class="modal-overlay" id="pixPaymentModal" role="dialog" aria-modal="true" aria-labelledby="pixModalTitle" hidden>
+    <div class="modal-dialog modal-pix">
+      <div class="modal-header">
+        <div class="pix-title-wrap">
+          <span class="pix-badge-icon"><i class="fa-brands fa-pix"></i></span>
+          <h3 class="modal-title" id="pixModalTitle">Pagamento via Pix</h3>
+        </div>
+        <button class="modal-close" id="btnClosePixModal" aria-label="Fechar janela">&times;</button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="pix-success-indicator">
+          <i class="fa-solid fa-circle-check"></i>
+          <h4>Agendamento Confirmado!</h4>
+          <p>Seu horário já foi reservado com sucesso no sistema.</p>
+        </div>
+
+        <div class="pix-amount-card">
+          <span class="amount-label">Valor a pagar</span>
+          <span class="amount-value" id="pixModalAmount">R$ 0,00</span>
+          <span class="amount-service" id="pixModalServiceDesc">Serviço Agendado</span>
+        </div>
+
+        <div class="pix-key-wrapper">
+          <label class="form-label text-left"><i class="fa-solid fa-key text-gold"></i> Chave Pix da Barbearia:</label>
+          <div class="pix-copy-input-group">
+            <input type="text" id="pixKeyInput" class="form-control pix-input" readonly value="contato@domnavalha.com.br">
+            <button class="btn btn-primary" id="btnCopyPix" type="button" title="Copiar chave Pix">
+              <i class="fa-regular fa-copy"></i> Copiar
+            </button>
+          </div>
+          <span class="copy-feedback-msg" id="pixCopyFeedback" aria-live="polite"></span>
+        </div>
+
+        <div class="pix-instructions">
+          <h5><i class="fa-solid fa-circle-info text-gold"></i> Como realizar o pagamento:</h5>
+          <ol>
+            <li>Abra o aplicativo do seu banco de preferência.</li>
+            <li>Acesse a área <strong>Pix</strong> e selecione transferir via chave.</li>
+            <li>Cole a chave Pix copiada acima e confira o valor de <strong id="pixModalAmountInst">R$ 0,00</strong>.</li>
+            <li>Confirme o pagamento. Pronto! Apresente o comprovante na recepção ou envie no nosso WhatsApp.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-block" id="btnFinishPixModal">
+          Entendido, fechar detalhes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL DE CONTRATAÇÃO DE PLANOS                 -->
+  <!-- ============================================== -->
+  <div class="modal-overlay" id="planModal" role="dialog" aria-modal="true" aria-labelledby="planModalTitle" hidden>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="planModalTitle"><i class="fa-solid fa-gem text-gold"></i> Contratar Plano VIP</h3>
+        <button class="modal-close" id="btnClosePlanModal" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="plan-selected-summary" id="planSelectedSummary">
+          <!-- Detalhes do plano selecionado via JS -->
+        </div>
+        <form id="planHireForm">
+          <div class="form-group">
+            <label for="planClientName" class="form-label">Seu Nome *</label>
+            <input type="text" id="planClientName" class="form-control" required placeholder="Seu nome completo">
+          </div>
+          <div class="form-group">
+            <label for="planClientPhone" class="form-label">WhatsApp *</label>
+            <input type="tel" id="planClientPhone" class="form-control" required placeholder="(11) 99999-9999">
+          </div>
+          <p class="text-muted small">
+            Nossa equipe de atendimento entrará em contato via WhatsApp para ativar seu passe VIP mensal e cadastrar seus benefícios.
+          </p>
+          <div class="modal-footer px-0 pb-0">
+            <button type="button" class="btn btn-secondary" id="btnCancelPlanModal">Voltar</button>
+            <button type="submit" class="btn btn-primary btn-glow">Solicitar Adesão</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container de Notificações Toast Flutuantes -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Arquivo de Script Principal -->
+  <script src="script.js"></script>
+</body>
+</html>

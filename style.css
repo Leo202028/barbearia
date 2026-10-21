@@ -1,0 +1,1779 @@
+/* ==========================================================================
+   BARBEARIA DOM NAVALHA - FOLHA DE ESTILOS PRINCIPAL (CSS PURO)
+   Design System: Dark Luxury Barbershop & Gold Accents
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIÁVEIS DO SISTEMA DE DESIGN (CSS TOKENS)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cores Base & Superfícies */
+  --bg-main: #0c0e12;
+  --bg-card: #141820;
+  --bg-card-hover: #1b212c;
+  --bg-card-elevated: #202734;
+  --bg-input: #12151b;
+  
+  /* Cores Douradas / Accent */
+  --gold-primary: #d4af37;
+  --gold-light: #f3cf65;
+  --gold-dark: #aa851d;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  --gold-gradient: linear-gradient(135deg, #f3cf65 0%, #d4af37 50%, #aa851d 100%);
+  
+  /* Cores de Feedback & Status */
+  --color-success: #10b981;
+  --color-success-bg: rgba(16, 185, 129, 0.12);
+  --color-danger: #ef4444;
+  --color-danger-bg: rgba(239, 68, 68, 0.12);
+  --color-warning: #f59e0b;
+  --color-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-pix: #32bcad;
+  --color-pix-bg: rgba(50, 188, 173, 0.15);
+  
+  /* Textos */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dark: #0f172a;
+
+  /* Bordas & Sombras */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(212, 175, 55, 0.35);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.35);
+
+  /* Tipografia */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Layout & Espaçamento */
+  --container-max: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & REGRAS BÁSICAS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.text-gold {
+  color: var(--gold-light) !important;
+}
+
+.text-danger {
+  color: var(--color-danger) !important;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. TOPBAR ANÚNCIO
+   -------------------------------------------------------------------------- */
+.top-announcement {
+  background: #06080a;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.5rem 0;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.top-announcement-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.top-announcement span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.top-announcement i {
+  color: var(--gold-primary);
+}
+
+/* --------------------------------------------------------------------------
+   4. CABEÇALHO & NAVEGAÇÃO STICKY
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12, 14, 18, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all var(--transition-normal);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 14px var(--gold-glow);
+}
+
+.logo-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.logo-subtitle {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: var(--gold-light);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 0.4rem 0;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--gold-light);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold-gradient);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  padding: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. BOTÕES & ELEMENTOS DE AÇÃO
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  border: 1px solid transparent;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 18px var(--gold-glow);
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.btn-secondary {
+  background: var(--bg-card-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1px solid var(--border-gold);
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-light);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-danger-outline {
+  background: transparent;
+  color: var(--color-danger);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.btn-danger-outline:hover {
+  background: var(--color-danger-bg);
+  border-color: var(--color-danger);
+}
+
+.btn-sm {
+  padding: 0.45rem 0.95rem;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: 1.05rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-glow {
+  box-shadow: 0 4px 20px var(--gold-glow);
+}
+
+/* --------------------------------------------------------------------------
+   6. CARDS GLASSMORPHISM & SEÇÕES
+   -------------------------------------------------------------------------- */
+.section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   7. SEÇÃO HERO
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 5rem 0 6rem 0;
+  background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold-light);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 38px;
+  background: var(--border-subtle);
+}
+
+/* Card Preview Hero */
+.hero-glass {
+  background: linear-gradient(145deg, rgba(27, 33, 44, 0.8) 0%, rgba(18, 22, 29, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.dot-online {
+  width: 8px;
+  height: 8px;
+  background: var(--color-success);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-success);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.preview-avatar {
+  width: 52px;
+  height: 52px;
+  background: var(--bg-card-elevated);
+  border: 2px solid var(--gold-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  font-size: 1.4rem;
+}
+
+.preview-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.preview-header p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.preview-quick-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.benefit-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   8. SEÇÃO PROMOÇÕES
+   -------------------------------------------------------------------------- */
+.promotions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.promo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.promo-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.promo-badge-discount {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 10px var(--gold-glow);
+}
+
+.promo-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.promo-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  padding-right: 3rem;
+}
+
+.promo-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.promo-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.promo-validity {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.promo-validity i {
+  color: var(--gold-primary);
+}
+
+/* --------------------------------------------------------------------------
+   9. SEÇÃO PLANOS & ASSINATURAS
+   -------------------------------------------------------------------------- */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.2rem;
+  align-items: stretch;
+}
+
+.plan-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.plan-card.featured {
+  background: linear-gradient(170deg, #181d27 0%, #12161f 100%);
+  border-color: var(--gold-primary);
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-light);
+}
+
+.plan-ribbon {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.3rem 1.2rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px var(--gold-glow);
+}
+
+.plan-name {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.plan-tagline {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.plan-price-wrapper {
+  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.currency {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+.amount {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.period {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.plan-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2.2rem;
+  flex-grow: 1;
+}
+
+.plan-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.plan-feature-item i {
+  color: var(--gold-light);
+  margin-top: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   10. SEÇÃO BARBEIROS (EQUIPE)
+   -------------------------------------------------------------------------- */
+.barbers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.barber-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all var(--transition-normal);
+}
+
+.barber-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.barber-avatar-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding: 4px;
+  background: var(--gold-gradient);
+}
+
+.barber-avatar-img, .barber-avatar-initials {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-card-elevated);
+}
+
+.barber-avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.barber-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.barber-specialty {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.barber-bio {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. SEÇÃO AGENDAMENTO & FORMULÁRIOS
+   -------------------------------------------------------------------------- */
+.booking-section {
+  background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.booking-form-card {
+  padding: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.col-md-6 {
+  flex: 1;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.form-control option {
+  background: #141820;
+  color: #fff;
+  padding: 10px;
+}
+
+.form-hint {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* Grade de Horários Disponíveis */
+.time-slots-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  min-height: 90px;
+  align-items: center;
+}
+
+.slots-placeholder {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.slot-btn {
+  padding: 0.65rem 0.5rem;
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.slot-btn:hover:not(:disabled) {
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.slot-btn.selected {
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  font-weight: 700;
+  border-color: transparent;
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+.slot-btn:disabled, .slot-btn.booked {
+  background: rgba(255, 255, 255, 0.03);
+  color: #475569;
+  border-color: transparent;
+  text-decoration: line-through;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Opções de Pagamento */
+.payment-method-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.payment-option {
+  padding: 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.payment-option.active {
+  background: rgba(212, 175, 55, 0.07);
+  border-color: var(--gold-primary);
+}
+
+.payment-option-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.option-radio label {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.option-radio input[type="radio"] {
+  accent-color: var(--gold-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.payment-option-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  padding-left: 1.8rem;
+}
+
+/* Badges Auxiliares */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+/* Resumo Lateral */
+.summary-card {
+  position: sticky;
+  top: 95px;
+  background: linear-gradient(170deg, #161b24 0%, #11141b 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.summary-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+}
+
+.summary-item .label {
+  color: var(--text-secondary);
+}
+
+.summary-item .value {
+  color: #fff;
+  font-weight: 600;
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 0.5rem 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.total-price {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--gold-light);
+}
+
+.cancellation-tip {
+  margin-top: 1.8rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.cancellation-tip i {
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   12. SEÇÃO MEUS AGENDAMENTOS
+   -------------------------------------------------------------------------- */
+.appointments-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.appointment-item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  transition: all var(--transition-fast);
+}
+
+.appointment-item-card:hover {
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+.app-info-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.app-date-box {
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+  text-align: center;
+  min-width: 80px;
+}
+
+.app-date-day {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.app-date-month {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.app-details h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.app-meta {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.app-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.app-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   13. MODAIS
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-dialog {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  max-width: 540px;
+  width: 100%;
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-pix {
+  max-width: 580px;
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+  padding: 1.5rem 1.8rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.modal-close {
+  font-size: 1.6rem;
+  color: var(--text-secondary);
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.modal-close:hover {
+  color: #fff;
+}
+
+.modal-body {
+  padding: 1.8rem;
+}
+
+.modal-footer {
+  padding: 1.25rem 1.8rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Estilos Especiais do Modal Pix */
+.pix-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pix-badge-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--color-pix-bg);
+  color: var(--color-pix);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.pix-success-indicator {
+  margin-bottom: 1.5rem;
+}
+
+.pix-success-indicator i {
+  font-size: 2.8rem;
+  color: var(--color-success);
+  margin-bottom: 0.6rem;
+}
+
+.pix-success-indicator h4 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.pix-success-indicator p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.pix-amount-card {
+  background: rgba(50, 188, 173, 0.08);
+  border: 1px dashed rgba(50, 188, 173, 0.4);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amount-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.amount-value {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1.1;
+  margin: 0.3rem 0;
+}
+
+.amount-service {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pix-key-wrapper {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.pix-copy-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pix-input {
+  font-family: monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  background: #0a0c10;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.copy-feedback-msg {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-success);
+  margin-top: 0.4rem;
+  min-height: 1.2rem;
+  font-weight: 600;
+}
+
+.pix-instructions {
+  background: var(--bg-card-elevated);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.4rem;
+  text-align: left;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.pix-instructions h5 {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pix-instructions ol {
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Modal de Planos */
+.plan-selected-summary {
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   14. TOAST NOTIFICATIONS
+   -------------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 380px;
+  width: calc(100% - 40px);
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  background: #171c26;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.toast-success {
+  border-left: 4px solid var(--color-success);
+}
+
+.toast.toast-success i {
+  color: var(--color-success);
+}
+
+.toast.toast-error {
+  border-left: 4px solid var(--color-danger);
+}
+
+.toast.toast-error i {
+  color: var(--color-danger);
+}
+
+.toast.toast-info {
+  border-left: 4px solid var(--gold-primary);
+}
+
+.toast.toast-info i {
+  color: var(--gold-light);
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.toast-message {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.toast-close {
+  color: var(--text-muted);
+  font-size: 1rem;
+  padding: 0 0.2rem;
+}
+
+.toast-close:hover {
+  color: #fff;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* --------------------------------------------------------------------------
+   15. RODAPÉ
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: #07090c;
+  border-top: 1px solid var(--border-subtle);
+  padding: 5rem 0 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-logo {
+  margin-bottom: 1.2rem;
+}
+
+.footer-bio {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.social-links a:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: translateY(-3px);
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 1.4rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--gold-primary);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--gold-light);
+  padding-left: 4px;
+}
+
+.footer-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.footer-hours li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.4rem;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.9rem;
+}
+
+.footer-contact i {
+  margin-top: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   16. RESPONSIVIDADE (MEDIA QUERIES)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hero-glass {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card {
+    position: static;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-announcement-content {
+    justify-content: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: #0d1016;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    display: none;
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
